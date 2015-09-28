@@ -1,0 +1,30 @@
+Настройка:
+1. JDK - add JAVA_HOME
+2. MAVEN - add M2_HOME
+3. Tomcat - add <user username="tomcat" password="tomcat" roles="tomcat,manager-gui,admin-gui"/>
+4. Git - add PATH
+5. Intelij Idea
+ 
+
+Обзор технологий
+http://zeroturnaround.com/rebellabs/java-tools-and-technologies-landscape-for-2014/
+
+полезные видео:
+http://javawebinar.ru/#/video
+
+установка софта для вебинара:
+http://javawebinar.ru/#/soft
+https://www.youtube.com/watch?v=vyoDLd6FGZo - tomcat
+
+
+https://github.com/gkislin/topjava03
+https://github.com/javawebinar
+
+
+maven зависимости профили
+http://www.ibm.com/developerworks/ru/library/j-5things13/
+
+http://gkislin.ru/help.html
+
+
+excluded folder
