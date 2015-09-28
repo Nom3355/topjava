@@ -3,7 +3,20 @@
 2. MAVEN - add M2_HOME
 3. Tomcat - add <user username="tomcat" password="tomcat" roles="tomcat,manager-gui,admin-gui"/>
 4. Git - add PATH
+git config --global user.name "nomHome"
+got config --global user.email "vladv3355@gmail.com"
+git config --global core.autocrlf true
+git config --global core.safecrlf true
+git config --global core.ui true
+git config --global core.editor = "\"c:\\Program Files\\Notepad++\\notepad++.exe\" %*"
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Nom3355/topjava.git
+git push -u origin master
 5. Intelij Idea
+6. git clone https://github.com/JavaWebinar/topjava02.git
+
  
 
 Обзор технологий
