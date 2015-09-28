@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>userServlet</servlet-name>
-        <servlet-class>ua.com.karre.web.UserServlet</servlet-class>
+        <servlet-class>ua.com.karre.topjava.web.UserServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
