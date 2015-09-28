@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.javawebinar</groupId>
+    <groupId>ua.com.karre</groupId>
     <artifactId>topjava</artifactId>
     <packaging>war</packaging>
 
     <version>1.0-SNAPSHOT</version>
 
-    <name>Calories Management</name>
+    <name>MyName</name>
     <url>http://caloriesmng.herokuapp.com/</url>
 
     <properties>
@@ -35,6 +35,14 @@
     </build>
 
     <dependencies>
+
+        <!--Web-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <profiles>
