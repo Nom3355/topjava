@@ -2,18 +2,18 @@ package ua.com.karre.topjava.service;
 
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ua.com.karre.topjava.model.User;
 import ua.com.karre.topjava.repository.UserRepository;
 import ua.com.karre.topjava.util.exception.NotFoundException;
 
 import java.util.List;
 
-/**
- * GKislin
- * 06.03.2015.
- */
+@Service
 public class UserServiceImpl implements UserService {
 
+    @Autowired
     private UserRepository repository;
 
     @Override

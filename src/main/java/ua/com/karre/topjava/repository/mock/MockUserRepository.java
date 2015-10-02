@@ -1,15 +1,13 @@
 package ua.com.karre.topjava.repository.mock;
 
+import org.springframework.stereotype.Repository;
 import ua.com.karre.topjava.LoggerWrapper;
 import ua.com.karre.topjava.model.User;
 import ua.com.karre.topjava.repository.UserRepository;
 
 import java.util.List;
 
-/**
- * User: gkislin
- * Date: 22.08.2014
- */
+@Repository
 public class MockUserRepository implements UserRepository {
     private static final LoggerWrapper LOG = LoggerWrapper.get(MockUserRepository.class);
 
