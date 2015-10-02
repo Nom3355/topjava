@@ -1,48 +1,45 @@
 package ua.com.karre.topjava.service;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.com.karre.topjava.model.User;
 import ua.com.karre.topjava.repository.UserRepository;
+import ua.com.karre.topjava.util.exception.ExceptionUtil;
 import ua.com.karre.topjava.util.exception.NotFoundException;
 
 import java.util.List;
 
+/**
+ * GKislin
+ * 06.03.2015.
+ */
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository repository;
 
-    @Override
     public User save(User user) {
-        return null;
+        return repository.save(user);
     }
 
-    @Override
-    public void delete(int id) throws NotFoundException {
-
+    public void delete(int id) {
+        ExceptionUtil.check(repository.delete(id), id);
     }
 
-    @Override
     public User get(int id) throws NotFoundException {
-        return null;
+        return ExceptionUtil.check(repository.get(id), id);
     }
 
-    @Override
     public User getByEmail(String email) throws NotFoundException {
-        return null;
+        return ExceptionUtil.check(repository.getByEmail(email), "email=" + email);
     }
 
-    @Override
     public List<User> getAll() {
-        return null;
+        return repository.getAll();
     }
 
-    @Override
     public void update(User user) throws NotFoundException {
-
+        ExceptionUtil.check(repository.save(user), user.getId());
     }
 }
