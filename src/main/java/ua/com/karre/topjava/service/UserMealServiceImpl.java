@@ -8,7 +8,7 @@ import ua.com.karre.topjava.repository.UserMealRepository;
  * 06.03.2015.
  */
 
-public class UserMealServiceImpl {
+public class UserMealServiceImpl implements UserMealService {
 
 
     private UserMealRepository repository;
