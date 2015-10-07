@@ -7,7 +7,9 @@ package ua.com.karre.topjava.model;
 
 import ua.com.karre.topjava.util.TimeUtil;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * GKislin
@@ -25,6 +27,10 @@ public class UserMeal extends BaseEntity {
     public UserMeal() {
     }
 
+    public UserMeal(UserMeal meal) {
+        this(meal.id, meal.dateTime, meal.description, meal.calories);
+    }
+
     public UserMeal(Integer id, LocalDateTime dateTime, String description, int calories) {
         super(id);
         this.dateTime = dateTime;
@@ -32,8 +38,8 @@ public class UserMeal extends BaseEntity {
         this.calories = calories;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public Date getDateTime() {
+        return Timestamp.valueOf(dateTime);
     }
 
     public String getDescription() {
@@ -50,6 +56,14 @@ public class UserMeal extends BaseEntity {
 
     public User getUser() {
         return user;
+    }
+
+    public void setDateTime(Timestamp dateTime) {
+        this.dateTime = dateTime.toLocalDateTime();
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     @Override
