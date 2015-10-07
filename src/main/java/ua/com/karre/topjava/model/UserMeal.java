@@ -7,9 +7,7 @@ package ua.com.karre.topjava.model;
 
 import ua.com.karre.topjava.util.TimeUtil;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * GKislin
@@ -38,8 +36,8 @@ public class UserMeal extends BaseEntity {
         this.calories = calories;
     }
 
-    public Date getDateTime() {
-        return Timestamp.valueOf(dateTime);
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
     public String getDescription() {
@@ -58,8 +56,8 @@ public class UserMeal extends BaseEntity {
         return user;
     }
 
-    public void setDateTime(Timestamp dateTime) {
-        this.dateTime = dateTime.toLocalDateTime();
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public void setCalories(int calories) {
