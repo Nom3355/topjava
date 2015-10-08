@@ -1,12 +1,12 @@
 package ua.com.karre.topjava.repository.jpa;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import ua.com.karre.topjava.model.User;
 import ua.com.karre.topjava.repository.UserRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -14,7 +14,8 @@ import java.util.List;
  * Date: 29.08.2014
  */
 @Repository
-public class JpaUserRepository implements UserRepository {
+@Transactional(readOnly = true)
+public class JpaUserRepositoryImpl implements UserRepository {
 
 /*
     @Autowired
@@ -29,6 +30,7 @@ public class JpaUserRepository implements UserRepository {
     private EntityManager em;
 
     @Override
+    @Transactional
     public User save(User user) {
         if (user.isNew()) {
             em.persist(user);
@@ -44,29 +46,29 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
+    @Transactional
     public boolean delete(int id) {
-//        User ref = em.getReference(User.class, id);
-//        em.remove(ref);
+/*
+        User ref = em.getReference(User.class, id);
+        em.remove(ref);
+*/
 
+/*
         TypedQuery<User> query = em.createQuery("DELETE FROM User u WHERE u.id=:id", User.class);
         return query.setParameter("id", id).executeUpdate() != 0;
-    }
-/*
+*/
         return em.createNamedQuery(User.DELETE)
                 .setParameter("id", id)
                 .executeUpdate() != 0;
     }
-*/
     @Override
     public User getByEmail(String email) {
-        return null;
-//        return em.createNamedQuery(User.BY_EMAIL, User.class).setParameter(1, email).getSingleResult();
+        return em.createNamedQuery(User.BY_EMAIL, User.class).setParameter(1, email).getSingleResult();
     }
 
     @Override
     public List<User> getAll() {
-        return null;
-//        return em.createNamedQuery(User.ALL_SORTED, User.class).getResultList();
+        return em.createNamedQuery(User.ALL_SORTED, User.class).getResultList();
     }
 
 }
