@@ -7,6 +7,8 @@ package ua.com.karre.topjava.model;
 
 import ua.com.karre.topjava.util.TimeUtil;
 
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
 /**
@@ -20,6 +22,7 @@ public class UserMeal extends BaseEntity {
 
     protected int calories;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     public UserMeal() {
