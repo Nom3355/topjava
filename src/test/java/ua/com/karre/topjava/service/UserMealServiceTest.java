@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.com.karre.topjava.model.UserMeal;
@@ -24,6 +25,7 @@ import static ua.com.karre.topjava.model.BaseEntity.START_SEQ;
         "classpath:spring/spring-db.xml"
 })
 @RunWith(SpringJUnit4ClassRunner.class)
+@ActiveProfiles("postgres")
 public class UserMealServiceTest {
 
     @Rule

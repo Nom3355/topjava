@@ -2,7 +2,6 @@ package ua.com.karre.topjava.repository.jpa;
 
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import ua.com.karre.topjava.model.User;
 import ua.com.karre.topjava.model.UserMeal;
@@ -18,7 +17,7 @@ import java.util.List;
  * 20.03.2015.
  */
 @Repository
-@Transactional(readOnly = true, propagation = Propagation.SUPPORTS)
+@Transactional(readOnly = true)
 public class JpaUserMealRepositoryImpl implements UserMealRepository {
 
     @PersistenceContext
