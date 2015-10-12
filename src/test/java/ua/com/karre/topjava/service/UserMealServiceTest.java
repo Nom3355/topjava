@@ -1,17 +1,9 @@
 package ua.com.karre.topjava.service;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ua.com.karre.topjava.model.UserMeal;
-import ua.com.karre.topjava.util.DbPopulator;
 import ua.com.karre.topjava.util.exception.NotFoundException;
 
 import java.time.LocalDateTime;
@@ -20,27 +12,10 @@ import java.util.Arrays;
 import static ua.com.karre.topjava.MealTestData.*;
 import static ua.com.karre.topjava.model.BaseEntity.START_SEQ;
 
-@ContextConfiguration({
-        "classpath:spring/spring-app.xml",
-        "classpath:spring/spring-db.xml"
-})
-@RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles("postgres")
-public class UserMealServiceTest {
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+abstract public class UserMealServiceTest extends DbTest {
 
     @Autowired
     UserMealService service;
-
-    @Autowired
-    private DbPopulator dbPopulator;
-
-    @Before
-    public void setUp() throws Exception {
-        dbPopulator.execute();
-    }
 
     @Test
     public void testDelete() throws Exception {
@@ -108,4 +83,3 @@ public class UserMealServiceTest {
         Assert.assertEquals(0, service.getAll(START_SEQ).size());
     }
 }
-
