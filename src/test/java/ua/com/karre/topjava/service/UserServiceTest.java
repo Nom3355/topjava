@@ -26,7 +26,7 @@ import static ua.com.karre.topjava.UserTestData.*;
         "classpath:spring/spring-db.xml"
 })
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles("hsqldb")
+@ActiveProfiles("postgres")
 public class UserServiceTest {
 
     @Autowired
