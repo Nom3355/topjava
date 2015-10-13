@@ -25,4 +25,7 @@
            diskExpiryThreadIntervalSeconds="1"
            memoryStoreEvictionPolicy="LRU"/>
 
+    <cache name="ua.com.karre.topjava.model.User"
+           maxElementsInMemory="1000"/>
+
 </ehcache>
