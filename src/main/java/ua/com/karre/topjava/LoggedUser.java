@@ -2,6 +2,7 @@ package ua.com.karre.topjava;
 
 
 
+import ua.com.karre.topjava.model.BaseEntity;
 import ua.com.karre.topjava.model.Role;
 
 import java.util.Collections;
@@ -14,7 +15,8 @@ import java.util.Set;
  * Mock implementation
  */
 public class LoggedUser {
-    protected int id = 0;
+    protected int id = BaseEntity.START_SEQ;
+
     protected Set<Role> roles = Collections.singleton(Role.ROLE_USER);
     protected boolean enabled = true;
 
