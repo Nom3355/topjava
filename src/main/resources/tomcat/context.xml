@@ -44,6 +44,6 @@
               username="user"
               password="user"
               driverClassName="org.postgresql.Driver"
-              url="jdbc:postgresql://localhost:5432/topjava"/>
+              url="jdbc:postgresql://localhost:5432/topjava02"/>
               <!--url="database.url=jdbc:postgresql://ec2-54-247-99-244.eu-west-1.compute.amazonaws.com:5432/dap8baaauorm64?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"-->
 </Context>
