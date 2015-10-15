@@ -1,14 +1,11 @@
 package ua.com.karre.topjava.service;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import ua.com.karre.topjava.UserTestData.*;
 import ua.com.karre.topjava.model.BaseEntity;
 import ua.com.karre.topjava.model.Role;
 import ua.com.karre.topjava.model.User;
-import ua.com.karre.topjava.util.DbPopulator;
 import ua.com.karre.topjava.util.exception.NotFoundException;
 
 import java.util.Arrays;
@@ -18,15 +15,6 @@ import java.util.List;
 import static ua.com.karre.topjava.UserTestData.*;
 
 abstract public class UserServiceTest extends DbTest {
-
-    @Autowired
-    private DbPopulator dbPopulator;
-
-    @Before
-    public void setUp() throws Exception {
-        dbPopulator.execute();
-        userService.evictCache();
-    }
 
     @Test
     public void testSave() throws Exception {
